@@ -23,12 +23,14 @@ arithmatic[com4]=$result3
 
 echo "Dictionary results"
 echo ${!arithmatic[@]}
-echo ${arithmatic[0]}
+echo ${arithmatic[@]}
+
+
 
 index=0
-compute[((index++))]=${arithmatic[com1]}
-compute[((index++))]=${arithmatic[com2]}
-compute[((index++))]=${arithmatic[com3]}
-compute[((index++))]=${arithmatic[com4]}
+for value in ${arithmatic[@]}
+do
+	compute[((index++))]=$value
+done
 
 echo ${compute[@]}
